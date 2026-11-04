@@ -1,0 +1,34 @@
+{
+  "generator": "robostream-0.1.0",
+  "seed": 42,
+  "config": {
+    "robots": 1,
+    "sessions_per_robot": 1,
+    "duration_seconds": 4,
+    "frequency_hz": 5,
+    "seed": 42,
+    "scenario": "degraded",
+    "joint_count": 6,
+    "noise": 0.005,
+    "tasks_per_session": 2,
+    "defect_probability": 0.12
+  },
+  "record_count": 25,
+  "sha256": "9bdda26ffa795970e18270167a70d8dca274d2321bae63de213a91d6d668345f",
+  "simulation_epoch_utc": "2026-01-01T00:00:00+00:00",
+  "generated_at_utc": "2026-11-04T11:07:32.416637+00:00",
+  "defects": [
+    "missing",
+    "duplicate",
+    "duplicate_sequence",
+    "out_of_order",
+    "gap",
+    "irregular",
+    "nonfinite",
+    "joint_limit",
+    "quaternion",
+    "incomplete",
+    "interrupted",
+    "conflict"
+  ]
+}

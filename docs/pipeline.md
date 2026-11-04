@@ -1,0 +1,17 @@
+# Pipeline policy and failure semantics
+
+1. **Archive original bytes** under SHA-256 checksum before accepting metadata persistence. Persist one `ingest_batches` entry, one `event_index` reference per accepted event (not sensor data) and one `issues` entry per reject or duplicate. The source line is preserved verbatim in archive. Invalid JSONL lines are independently logged to `data/rejected/<batch>.jsonl` and do not terminate ingestion.
+2. **Build a traceable run** for `(batch_id, config_hash, pipeline_version)` with status `running`; return an existing successful run unless `--force` is given. A new forced run has a distinct run ID and output location.
+3. **Physical validation** uses a versioned robot profile. Reject NaN/Inf, invalid quaternion norm, out-of-bounds gripper/workspace/joint limits and mismatched joint counts. No numerical clipping or unreported data repair occurs.
+4. **Temporal validation** uses *arrival order* across all event types to detect out-of-order timestamps, sequence regressions and repeated sequences. Separately, sorted UTC observation intervals reveal sensor inactivity gaps, duplicate sample timestamps and irregular sampling. Control markers do not count as sensor samples and may share an observation timestamp.
+5. **Segmentation** partitions first by robot/session, then sorts by timestamp/sequence/event ID, and starts a new episode when task ID changes, an explicit task-start occurs, or an inactivity gap exceeds threshold. A terminal task-event (success/failure/aborted) closes an episode. A stream that stops without terminal status is marked incomplete. Multiple task attempts within a session are separate episodes. Conflicting terminal events are recorded as a warning and may form a second, structurally incomplete episode. Empty sessions create no episodes. Null task IDs are permitted for non-task events; explicit named task changes take precedence.
+6. **Assessment** computes missingness on observations only, issues per stream/task, normalized per-episode penalty factors, source event IDs and quality labels. The session status is `interrupted` if any episode incomplete, else `failed` if any task failed, else `completed`.
+7. **Commit outputs**: write each Parquet atomically with a same-directory temp file and OS rename; write the report atomically; commit associated DB episode rows, issues and `completed` run in one SQL transaction. A failure rolls back SQL, records a failed run, cleans processed output for that run and retains all raw input. Errors are logged with no secrets or sensor dumps.
+
+## Replay and config changes
+
+The raw checksum identifies identical files. A different profile or pipeline configuration changes run hash and logical episode IDs. Forcing an identical configuration creates a new run whose stable logical episode IDs match, but versioned paths and provenance differ. Source session boundaries are only processed within one batch; split batches do not currently support cross-batch reconstruction.
+
+## Known reliability gaps
+
+SQL and local filesystem cannot atomically commit together. On abrupt process kill, orphan temporary/derived files can remain; a maintenance command would be needed to garbage collect them. There is no transaction advisory lock preventing two concurrent writers to an identical checksum. Tests exercise simulated write failure, missing task terminal, invalid JSON, replay and duplicate handling.

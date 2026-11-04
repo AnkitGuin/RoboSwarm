@@ -1,0 +1,9 @@
+[
+  {
+    "robot_id": "robot_001",
+    "session_id": "session_001_001",
+    "operator_id": "synthetic_operator_001",
+    "source": "synthetic",
+    "task_type": "pick_and_place"
+  }
+]

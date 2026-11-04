@@ -1,0 +1,10 @@
+default:
+  joint_count: 6
+  joint_position_min: -3.141593
+  joint_position_max: 3.141593
+  max_joint_velocity: 3.0
+  workspace_min: -2.0
+  workspace_max: 2.0
+  gripper_min: 0.0
+  gripper_max: 1.0
+  quaternion_tolerance: 0.05

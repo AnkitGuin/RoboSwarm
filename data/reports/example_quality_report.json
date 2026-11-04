@@ -1,0 +1,312 @@
+{
+  "provenance": "Executed validation, temporal checks, segmentation and scoring in memory",
+  "not_full_storage_pipeline": true,
+  "pipeline_version": "0.1.0",
+  "config_hash": "fa11f960d9bfd527",
+  "input_count": 25,
+  "ingestion_rejected": 3,
+  "processing_rejected": 12,
+  "accepted": 10,
+  "episode_count": 5,
+  "issue_counts_by_code": {
+    "JOINT_LIMIT_EXCEEDED": 2,
+    "NON_FINITE_SENSOR_VALUE": 5,
+    "INVALID_QUATERNION": 5,
+    "MISSING_SEQUENCE_NUMBER": 5,
+    "OUT_OF_ORDER_TIMESTAMP": 2,
+    "INCONSISTENT_SAMPLING_RATE": 2,
+    "TIMESTAMP_GAP": 1
+  },
+  "episode_quality_reports": [
+    {
+      "episode_id": "e0be4bfa-b7bc-529d-bb03-f8c4de19f503",
+      "robot_id": "robot_001",
+      "session_id": "session_001_001",
+      "task_id": "task_001",
+      "metrics": {
+        "record_count": 4,
+        "duration_seconds": 1.8,
+        "sampling_rate_hz": 1.25,
+        "missing_value_rates": {
+          "joint_positions": 0.333333,
+          "joint_velocities": 0.0,
+          "end_effector_position": 0.0,
+          "end_effector_orientation": 0.0,
+          "gripper_position": 0.0
+        },
+        "duplicate_event_count": 0,
+        "out_of_order_count": 1,
+        "timestamp_gap_count": 0,
+        "max_timestamp_gap": 0.942,
+        "invalid_numerical_count": 3,
+        "physical_limit_violation_count": 6,
+        "has_terminal_event": false,
+        "completed_successfully": false,
+        "complete": false,
+        "completion_status": "incomplete",
+        "quality_score": 38.0,
+        "quality_status": "rejected",
+        "penalties": {
+          "missing": 2.0,
+          "timestamp": 10.0,
+          "duplicate": 0.0,
+          "invalid": 30,
+          "incomplete": 20
+        },
+        "quality_flags": [
+          "INCOMPLETE_EPISODE",
+          "JOINT_LIMIT_EXCEEDED",
+          "NON_FINITE_SENSOR_VALUE",
+          "INVALID_QUATERNION",
+          "MISSING_SEQUENCE_NUMBER",
+          "OUT_OF_ORDER_TIMESTAMP",
+          "INCONSISTENT_SAMPLING_RATE"
+        ],
+        "issue_counts": {
+          "JOINT_LIMIT_EXCEEDED": 2,
+          "NON_FINITE_SENSOR_VALUE": 3,
+          "INVALID_QUATERNION": 1,
+          "MISSING_SEQUENCE_NUMBER": 2,
+          "OUT_OF_ORDER_TIMESTAMP": 1,
+          "INCONSISTENT_SAMPLING_RATE": 1
+        },
+        "event_ids": [
+          "860020d6-8583-504c-a4bc-eebe0a3bf1d2",
+          "686d2093-97c4-54f8-8d81-d1466587b634",
+          "8906d96a-ed07-518d-8141-3ff376bb00c2",
+          "d29621fd-7475-540a-a839-589882c2e335"
+        ]
+      }
+    },
+    {
+      "episode_id": "45869d17-f989-5b5d-ada3-f7d3c2875dab",
+      "robot_id": "robot_001",
+      "session_id": "session_001_001",
+      "task_id": "task_002",
+      "metrics": {
+        "record_count": 1,
+        "duration_seconds": 0.0,
+        "sampling_rate_hz": 0.0,
+        "missing_value_rates": {
+          "joint_positions": 0.0,
+          "joint_velocities": 0.0,
+          "end_effector_position": 0.0,
+          "end_effector_orientation": 0.0,
+          "gripper_position": 0.0
+        },
+        "duplicate_event_count": 0,
+        "out_of_order_count": 1,
+        "timestamp_gap_count": 1,
+        "max_timestamp_gap": 0.0,
+        "invalid_numerical_count": 2,
+        "physical_limit_violation_count": 6,
+        "has_terminal_event": false,
+        "completed_successfully": false,
+        "complete": false,
+        "completion_status": "incomplete",
+        "quality_score": 30.0,
+        "quality_status": "rejected",
+        "penalties": {
+          "missing": 0.0,
+          "timestamp": 20,
+          "duplicate": 0.0,
+          "invalid": 30,
+          "incomplete": 20
+        },
+        "quality_flags": [
+          "TIMESTAMP_GAP",
+          "INCOMPLETE_EPISODE",
+          "INVALID_QUATERNION",
+          "NON_FINITE_SENSOR_VALUE",
+          "MISSING_SEQUENCE_NUMBER",
+          "OUT_OF_ORDER_TIMESTAMP",
+          "INCONSISTENT_SAMPLING_RATE"
+        ],
+        "issue_counts": {
+          "INVALID_QUATERNION": 4,
+          "NON_FINITE_SENSOR_VALUE": 2,
+          "MISSING_SEQUENCE_NUMBER": 3,
+          "OUT_OF_ORDER_TIMESTAMP": 1,
+          "INCONSISTENT_SAMPLING_RATE": 1,
+          "TIMESTAMP_GAP": 1
+        },
+        "event_ids": [
+          "105e53ed-830d-5474-addd-04485c7e05b9"
+        ]
+      }
+    },
+    {
+      "episode_id": "447bc9ce-6477-5176-ae08-d657cc1cd935",
+      "robot_id": "robot_001",
+      "session_id": "session_001_001",
+      "task_id": "task_002",
+      "metrics": {
+        "record_count": 1,
+        "duration_seconds": 0.0,
+        "sampling_rate_hz": 0.0,
+        "missing_value_rates": {
+          "joint_positions": 0.0,
+          "joint_velocities": 0.0,
+          "end_effector_position": 0.0,
+          "end_effector_orientation": 0.0,
+          "gripper_position": 0.0
+        },
+        "duplicate_event_count": 0,
+        "out_of_order_count": 1,
+        "timestamp_gap_count": 1,
+        "max_timestamp_gap": 0.0,
+        "invalid_numerical_count": 2,
+        "physical_limit_violation_count": 6,
+        "has_terminal_event": false,
+        "completed_successfully": false,
+        "complete": false,
+        "completion_status": "incomplete",
+        "quality_score": 30.0,
+        "quality_status": "rejected",
+        "penalties": {
+          "missing": 0.0,
+          "timestamp": 20,
+          "duplicate": 0.0,
+          "invalid": 30,
+          "incomplete": 20
+        },
+        "quality_flags": [
+          "INCOMPLETE_EPISODE",
+          "INVALID_QUATERNION",
+          "NON_FINITE_SENSOR_VALUE",
+          "MISSING_SEQUENCE_NUMBER",
+          "OUT_OF_ORDER_TIMESTAMP",
+          "INCONSISTENT_SAMPLING_RATE",
+          "TIMESTAMP_GAP"
+        ],
+        "issue_counts": {
+          "INVALID_QUATERNION": 4,
+          "NON_FINITE_SENSOR_VALUE": 2,
+          "MISSING_SEQUENCE_NUMBER": 3,
+          "OUT_OF_ORDER_TIMESTAMP": 1,
+          "INCONSISTENT_SAMPLING_RATE": 1,
+          "TIMESTAMP_GAP": 1
+        },
+        "event_ids": [
+          "cd8fbc72-bbbc-5964-82aa-622c98cb2fda"
+        ]
+      }
+    },
+    {
+      "episode_id": "9629f146-7770-5bcb-b086-711f9d07bd96",
+      "robot_id": "robot_001",
+      "session_id": "session_001_001",
+      "task_id": "task_001",
+      "metrics": {
+        "record_count": 1,
+        "duration_seconds": 0.0,
+        "sampling_rate_hz": 0.0,
+        "missing_value_rates": {
+          "joint_positions": 0.0,
+          "joint_velocities": 0.0,
+          "end_effector_position": 0.0,
+          "end_effector_orientation": 0.0,
+          "gripper_position": 0.0
+        },
+        "duplicate_event_count": 0,
+        "out_of_order_count": 1,
+        "timestamp_gap_count": 0,
+        "max_timestamp_gap": 0.0,
+        "invalid_numerical_count": 3,
+        "physical_limit_violation_count": 6,
+        "has_terminal_event": false,
+        "completed_successfully": false,
+        "complete": false,
+        "completion_status": "incomplete",
+        "quality_score": 30.0,
+        "quality_status": "rejected",
+        "penalties": {
+          "missing": 0.0,
+          "timestamp": 20,
+          "duplicate": 0.0,
+          "invalid": 30,
+          "incomplete": 20
+        },
+        "quality_flags": [
+          "INCOMPLETE_EPISODE",
+          "JOINT_LIMIT_EXCEEDED",
+          "NON_FINITE_SENSOR_VALUE",
+          "INVALID_QUATERNION",
+          "MISSING_SEQUENCE_NUMBER",
+          "OUT_OF_ORDER_TIMESTAMP",
+          "INCONSISTENT_SAMPLING_RATE"
+        ],
+        "issue_counts": {
+          "JOINT_LIMIT_EXCEEDED": 2,
+          "NON_FINITE_SENSOR_VALUE": 3,
+          "INVALID_QUATERNION": 1,
+          "MISSING_SEQUENCE_NUMBER": 2,
+          "OUT_OF_ORDER_TIMESTAMP": 1,
+          "INCONSISTENT_SAMPLING_RATE": 1
+        },
+        "event_ids": [
+          "6ce1d0da-9c74-506e-a4bc-b17b8501a010"
+        ]
+      }
+    },
+    {
+      "episode_id": "46e76b73-bf5e-52ae-831b-de9687428237",
+      "robot_id": "robot_001",
+      "session_id": "session_001_001",
+      "task_id": "task_002",
+      "metrics": {
+        "record_count": 3,
+        "duration_seconds": 1.0,
+        "sampling_rate_hz": 2.0,
+        "missing_value_rates": {
+          "joint_positions": 0.0,
+          "joint_velocities": 0.0,
+          "end_effector_position": 0.0,
+          "end_effector_orientation": 0.0,
+          "gripper_position": 0.0
+        },
+        "duplicate_event_count": 0,
+        "out_of_order_count": 1,
+        "timestamp_gap_count": 1,
+        "max_timestamp_gap": 0.6,
+        "invalid_numerical_count": 2,
+        "physical_limit_violation_count": 6,
+        "has_terminal_event": false,
+        "completed_successfully": false,
+        "complete": false,
+        "completion_status": "incomplete",
+        "quality_score": 30.0,
+        "quality_status": "rejected",
+        "penalties": {
+          "missing": 0.0,
+          "timestamp": 20,
+          "duplicate": 0.0,
+          "invalid": 30,
+          "incomplete": 20
+        },
+        "quality_flags": [
+          "INCOMPLETE_EPISODE",
+          "INVALID_QUATERNION",
+          "NON_FINITE_SENSOR_VALUE",
+          "MISSING_SEQUENCE_NUMBER",
+          "OUT_OF_ORDER_TIMESTAMP",
+          "INCONSISTENT_SAMPLING_RATE",
+          "TIMESTAMP_GAP"
+        ],
+        "issue_counts": {
+          "INVALID_QUATERNION": 4,
+          "NON_FINITE_SENSOR_VALUE": 2,
+          "MISSING_SEQUENCE_NUMBER": 3,
+          "OUT_OF_ORDER_TIMESTAMP": 1,
+          "INCONSISTENT_SAMPLING_RATE": 1,
+          "TIMESTAMP_GAP": 1
+        },
+        "event_ids": [
+          "f93e6e5c-bd64-5238-9fbe-665aebc0a703",
+          "9cd88edf-3f39-5305-96d4-5f26ee1d071a",
+          "e2f1fbd7-02a8-5358-8cb5-6a955dcea7a4"
+        ]
+      }
+    }
+  ]
+}

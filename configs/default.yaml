@@ -1,0 +1,13 @@
+pipeline_version: '0.1.0'
+gap_seconds: 1.0
+expected_frequency_hz: 20.0
+sampling_irregularity_tolerance: 0.60
+quality:
+  missing_weight: 30.0
+  timestamp_weight: 20.0
+  duplicate_weight: 15.0
+  invalid_weight: 30.0
+  incomplete_penalty: 20.0
+  poor_threshold: 50.0
+  acceptable_threshold: 75.0
+  excellent_threshold: 90.0
